@@ -13,24 +13,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 
 <style>
-/* Base Layout */
+/* ---------- Base ---------- */
+:root{
+  --bg1:#05060a;
+  --panel-bg: rgba(15,20,35,0.6);
+  --accent:#0077ff;
+  --accent-2:#7fc6ff;
+  --muted:#88aadd;
+}
+*{box-sizing:border-box}
 body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
     color: #e6e6e6;
-    background: #05060a;
+    background: var(--bg1);
     overflow-x: hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
-/* Particle Canvas (Behind Everything) */
+/* Particle Canvas */
 #particles {
     position: fixed;
     inset: 0;
     z-index: -1;
 }
 
-/* Fade In Animation */
+/* Fade In */
 * {
     animation: fadeIn 0.9s ease forwards;
     opacity: 0;
@@ -38,245 +48,377 @@ body {
 @keyframes fadeIn { to { opacity: 1; } }
 
 .container {
-    max-width: 950px;
-    margin: 40px auto;
-    padding: 40px;
-    background: rgba(15, 20, 35, 0.6);
+    max-width: 980px;
+    margin: 36px auto;
+    padding: 34px;
+    background: var(--panel-bg);
     border-radius: 12px;
     border: 1px solid #0a2345;
     backdrop-filter: blur(12px);
-    box-shadow: 0 0 25px #0077ff44, 0 0 8px #0077ff22;
+    box-shadow: 0 0 30px rgba(0,119,255,0.18), 0 0 10px rgba(0,119,255,0.08);
 }
 
-h1 {
-    font-family: "Orbitron", sans-serif;
-    font-size: 42px;
-    letter-spacing: 3px;
-    color: #7fc6ff;
-    margin-bottom: 5px;
-    text-shadow: 0 0 10px #0077ff;
-}
-
-h2 {
-    margin-top: 40px;
-    font-size: 26px;
-    font-family: "Orbitron", sans-serif;
-    color: #70baff;
-    border-left: 5px solid #0077ff;
-    padding-left: 12px;
-    text-shadow: 0 0 8px #006eff;
-}
-
+/* Header */
 .header {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     border-bottom: 2px solid #0f2444;
+    margin-bottom: 18px;
 }
+h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 40px;
+    letter-spacing: 3px;
+    color: var(--accent-2);
+    margin: 0 0 6px 0;
+    text-shadow: 0 0 10px var(--accent);
+}
+.header p { margin:4px 0; color:#dfefff; }
+
+/* ---------- TAB PANEL ---------- */
+.tabpanel {
+  margin: 18px 0 28px 0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.tablist {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.tab {
+  background: transparent;
+  border: 1px solid rgba(120,160,255,0.08);
+  color:var(--accent-2);
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  outline: none;
+  transition: all .18s ease;
+}
+.tab[aria-selected="true"]{
+  background: linear-gradient(90deg, rgba(0,119,255,0.12), rgba(127,198,255,0.06));
+  box-shadow: 0 6px 18px rgba(0,119,255,0.06), inset 0 -2px 8px rgba(0,0,0,0.2);
+  border-color: var(--accent);
+  color: #dff6ff;
+}
+.tab:focus { box-shadow: 0 0 0 3px rgba(0,119,255,0.12); }
+
+/* panel content */
+.tab-panel {
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(22,30,48,0.45);
+  border: 1px solid rgba(10,24,40,0.5);
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.25);
+}
+.tab-panel p, .tab-panel ul { margin:0; line-height:1.6; color:#e8f6ff; }
+
+/* ---------- Content Blocks ---------- */
+h2 {
+    margin-top: 18px;
+    font-size: 24px;
+    font-family: "Orbitron", sans-serif;
+    color: #70baff;
+    border-left: 5px solid var(--accent);
+    padding-left: 12px;
+    text-shadow: 0 0 6px #006eff;
+}
+ul { margin-top:10px; line-height:1.7; color:#dceeff; }
 
 /* Clickable Cards */
 .project, .exp {
-    margin-bottom: 25px;
-    padding: 18px 20px;
+    margin-bottom: 18px;
+    padding: 16px 18px;
     background: rgba(30, 40, 60, 0.55);
     border-left: 4px solid #00aaff;
     border-radius: 12px;
-    transition: 0.3s ease;
+    transition: 0.28s ease;
     box-shadow: inset 0 0 12px #003e77;
 }
-
-.project {
-    cursor: pointer;
-}
-
+.project { cursor:pointer; }
 .project:hover, .exp:hover {
     background: rgba(45, 60, 90, 0.9);
-    transform: scale(1.03);
-    box-shadow: 0 0 25px #008cffaa;
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 0 26px #008cffaa, inset 0 0 20px #005599;
 }
 
-.project-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+/* Remove link styling while making full card clickable */
+.project-link { text-decoration:none; color:inherit; display:block; }
 
+/* Footer */
 .footer {
     text-align: center;
-    margin-top: 40px;
-    color: #88aadd;
-    font-size: 14px;
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 13px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .container { padding: 25px; margin: 20px; }
-    h1 { font-size: 32px; }
-    h2 { font-size: 22px; }
-}
-@media (max-width: 480px) {
-    h1 { font-size: 28px; }
-    body { font-size: 15px; }
+@media (max-width: 780px) {
+  .container { margin: 18px; padding: 20px; }
+  h1 { font-size: 32px; }
+  .tab { padding:8px 10px; font-size:14px; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- PARTICLE BACKGROUND CANVAS -->
+<!-- Particle Canvas -->
 <canvas id="particles"></canvas>
 
 <div class="container">
 
-    <div class="header">
-        <h1>PRATEEK CHAUHAN</h1>
-        <p><strong>Community & QA Specialist • Unity Game Developer</strong></p>
-        <p>Haridwar, Uttarakhand • +91 7906045075</p>
+  <div class="header" role="banner">
+    <h1>PRATEEK CHAUHAN</h1>
+    <p><strong>Community & QA Specialist • Unity Game Developer</strong></p>
+    <p>Haridwar, Uttarakhand • +91 7906045075</p>
+  </div>
+
+  <!-- Accessible Tabs: Overview | Skills | Qualifications -->
+  <section class="tabpanel" aria-labelledby="profile-tabs">
+    <div class="tablist" role="tablist" aria-label="Profile tabs" id="profile-tabs">
+      <button class="tab" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">Overview</button>
+      <button class="tab" role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="false">Skills</button>
+      <button class="tab" role="tab" id="tab-quals" aria-controls="panel-quals" aria-selected="false">Qualifications</button>
     </div>
 
-    <h2>Professional Summary</h2>
-    <p>
-        Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years of experience supporting
-        game studios in launching polished, high-engagement products.
-    </p>
+    <div id="panel-overview" class="tab-panel" role="tabpanel" aria-labelledby="tab-overview">
+      <p>
+        Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years supporting
+        game studios in launching polished, high-engagement products. Skilled in Unity (C#), QA pipelines,
+        Blender workflows, AI automation, and Solidity smart contract development. Proven record growing communities,
+        boosting DAU, and delivering production-ready features.
+      </p>
+    </div>
 
-    <h2>Core Skills</h2>
+    <div id="panel-skills" class="tab-panel" role="tabpanel" aria-labelledby="tab-skills" hidden>
+      <ul>
+        <li><strong>Community & Growth:</strong> Discord, Telegram, WhatsApp moderation; event planning; retention strategies.</li>
+        <li><strong>QA:</strong> Functional, Regression, UAT testing, bug triage, test case design, CI build validation.</li>
+        <li><strong>Game Dev:</strong> Unity 3D (C#), gameplay systems, optimization, profiling, animation retargeting.</li>
+        <li><strong>Art & Tools:</strong> Blender modeling/texturing, lighting, VFX (particles), asset optimization.</li>
+        <li><strong>Programming:</strong> C++, Java, Python; Solidity smart contracts; tooling & automation scripts.</li>
+        <li><strong>Design & Prod:</strong> Figma (wireframes), Photoshop, Agile/Scrum, SOP creation, mentor & team workflows.</li>
+      </ul>
+    </div>
+
+    <div id="panel-quals" class="tab-panel" role="tabpanel" aria-labelledby="tab-quals" hidden>
+      <h3 style="margin:0 0 8px 0; color:#cfe9ff;">Education</h3>
+      <ul>
+        <li>B.Tech – Computer Science & Engineering – Uttarakhand Technical University (2022)</li>
+        <li>Senior Secondary (Class XII) – Shri Guru Ram Rai Public School (2018)</li>
+        <li>Secondary (Class X) – Shri Guru Ram Rai Public School (2016)</li>
+      </ul>
+      <h3 style="margin:12px 0 8px 0; color:#cfe9ff;">Certifications</h3>
+      <ul>
+        <li>3D Game Development Internship — Heyo Entertainment, 2025</li>
+        <li>AI Masterminds – AI & Automation Masterclass — Outskill, 2025</li>
+        <li>Android Studio Development — Code With Harry, 2023</li>
+        <li>UI/UX Design — Online Certification, 2022</li>
+        <li>Industrial Training in Java — Insergo Technologies Pvt Ltd, 2019</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <h2>Professional Experience</h2>
+
+  <div class="exp">
+    <strong>GLIP.gg — Community Manager & QA Engineer (Nov 2022 – Present)</strong>
     <ul>
-        <li>Community growth & moderation</li>
-        <li>Event planning: tournaments, AMAs, gaming campaigns</li>
-        <li>Player engagement & retention strategies</li>
-        <li>Functional, Regression & UAT testing</li>
-        <li>Unity 3D (C#) • Blender • Lighting • VFX</li>
-        <li>C++, Java, Python • Solidity</li>
-        <li>Figma • Photoshop • Agile/Scrum</li>
+      <li>Scaled Discord community 2,000 → 31,000+ members in 7 months.</li>
+      <li>Hosted events with 70–80% participation; boosted DAU by 2×–3×.</li>
+      <li>Designed & executed QA cycles reducing post-launch defects.</li>
     </ul>
+  </div>
 
-    <h2>Professional Experience</h2>
+  <div class="exp">
+    <strong>Heyo Entertainment Pvt Ltd — Unity Game Development Intern (Jan 2025 – Jul 2025)</strong>
+    <ul>
+      <li>Developed high-performance gameplay systems (Unity, C#).</li>
+      <li>Optimized Blender assets reducing build size by ~100 MB.</li>
+      <li>Automated lighting & VFX presets to speed workflows.</li>
+    </ul>
+  </div>
 
-    <div class="exp">
-        <strong>GLIP.gg — Community Manager & QA Engineer</strong>
-        <ul>
-            <li>Scaled Discord community 2k → 31k+ in 7 months</li>
-            <li>Boosted DAU by 2×–3×</li>
-            <li>Reduced defects with structured QA cycles</li>
-        </ul>
+  <!-- Projects -->
+  <h2>Projects</h2>
+
+  <a class="project-link" href="https://github.com/yourusername/wealth-management-game" target="_blank" rel="noopener noreferrer">
+    <div class="project">
+      <strong>Wealth Management Game (Unity)</strong><br>
+      Futuristic 2D strategy game with optimized UI & rapid prototyping.
     </div>
+  </a>
 
-    <div class="exp">
-        <strong>Heyo Entertainment — Unity Game Dev Intern</strong>
-        <ul>
-            <li>Developed gameplay systems (Unity, C#)</li>
-            <li>Optimized Blender assets by 100MB</li>
-            <li>Created automated lighting + VFX workflows</li>
-        </ul>
+  <a class="project-link" href="https://github.com/yourusername/voice-npc-ai" target="_blank" rel="noopener noreferrer">
+    <div class="project">
+      <strong>Voice-Controlled NPC Dialog System</strong><br>
+      Real-time AI-driven NPC interaction (Python / TensorFlow).
     </div>
+  </a>
 
-    <h2>Projects</h2>
+  <a class="project-link" href="https://github.com/yourusername/solidity-utilities" target="_blank" rel="noopener noreferrer">
+    <div class="project">
+      <strong>Smart-Contract Utilities (Solidity)</strong><br>
+      Automation & wallet logic modules for blockchain games.
+    </div>
+  </a>
 
-    <a class="project-link" href="https://github.com/yourusername/wealth-management-game" target="_blank">
-        <div class="project">
-            <strong>Wealth Management Game (Unity)</strong><br>
-            Futuristic 2D strategy game with optimized UI flow.
-        </div>
-    </a>
+  <a class="project-link" href="https://github.com/yourusername/entropy-generator-cpp" target="_blank" rel="noopener noreferrer">
+    <div class="project">
+      <strong>Crypto Wallet Entropy Generator (C++)</strong><br>
+      Pure 132-bit entropy generator with checksum validation.
+    </div>
+  </a>
 
-    <a class="project-link" href="https://github.com/yourusername/voice-npc-ai" target="_blank">
-        <div class="project">
-            <strong>Voice-Controlled NPC Dialog System</strong><br>
-            Real-time AI-driven NPC interaction.
-        </div>
-    </a>
+  <a class="project-link" href="https://github.com/yourusername/animation-retargeting" target="_blank" rel="noopener noreferrer">
+    <div class="project">
+      <strong>Animation Retargeting System (Unity)</strong><br>
+      Automated humanoid animation retargeting using Unity Avatar system.
+    </div>
+  </a>
 
-    <a class="project-link" href="https://github.com/yourusername/solidity-utilities" target="_blank">
-        <div class="project">
-            <strong>Smart Contract Utilities</strong><br>
-            Solidity modules for blockchain-enabled games.
-        </div>
-    </a>
-
-    <a class="project-link" href="httpsgithub.com/yourusername/entropy-generator-cpp" target="_blank">
-        <div class="project">
-            <strong>132-bit Entropy Generator (C++)</strong><br>
-            Custom crypto entropy generator, no BIP libs.
-        </div>
-    </a>
-
-    <a class="project-link" href="https://github.com/yourusername/animation-retargeting" target="_blank">
-        <div class="project">
-            <strong>Animation Retargeting System (Unity)</strong><br>
-            Automated humanoid animation retargeting.
-        </div>
-    </a>
-
-    <div class="footer">© 2025 Prateek Chauhan — Game Dev Portfolio</div>
-
+  <div class="footer">© 2025 Prateek Chauhan — Game Dev Portfolio</div>
 </div>
 
-<!-- PARTICLE BACKGROUND SCRIPT -->
+<!-- ---------------- PARTICLES ---------------- -->
 <script>
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
+/* Lightweight particle system with subtle interactivity */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let W = canvas.width = innerWidth;
+let H = canvas.height = innerHeight;
 
-let particles = [];
-const count = 80;
+window.addEventListener('resize', ()=> { W = canvas.width = innerWidth; H = canvas.height = innerHeight; });
 
-// Resize canvas
-function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
+const N = Math.max(50, Math.floor((W*H)/80000)); // density based on screen
+const particles = [];
 
-// Create particle objects
-for (let i = 0; i < count; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.7,
-        dy: (Math.random() - 0.5) * 0.7
-    });
+function rand(min,max){ return Math.random()*(max-min)+min; }
+
+for(let i=0;i<N;i++){
+  particles.push({
+    x: rand(0,W), y: rand(0,H),
+    r: rand(0.9,2.6),
+    vx: rand(-0.35,0.35), vy: rand(-0.25,0.25),
+    hue: rand(195,215), alpha: rand(0.6,1)
+  });
 }
 
-function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+let mouse = {x:-9999,y:-9999,active:false};
+window.addEventListener('mousemove', e=> { mouse.x=e.clientX; mouse.y=e.clientY; });
+window.addEventListener('mouseenter', ()=> mouse.active=true);
+window.addEventListener('mouseleave', ()=> { mouse.active=false; mouse.x=-9999; mouse.y=-9999; });
 
-    particles.forEach(p => {
+function step(){
+  ctx.clearRect(0,0,W,H);
+
+  // draw lines first for depth
+  for(let i=0;i<N;i++){
+    let p = particles[i];
+    for(let j=i+1;j<N;j++){
+      let q = particles[j];
+      let dx = p.x-q.x, dy = p.y-q.y;
+      let d = Math.hypot(dx,dy);
+      if(d<120){
+        ctx.strokeStyle = `rgba(110,170,255,${Math.max(0,0.11 - d*0.0009)})`;
+        ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#7fc6ff";
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = "#0077ff";
-        ctx.fill();
+        ctx.moveTo(p.x,p.y);
+        ctx.lineTo(q.x,q.y);
+        ctx.stroke();
+      }
+    }
+  }
 
-        // Motion
-        p.x += p.dx;
-        p.y += p.dy;
+  // particles
+  for(let p of particles){
+    // attraction to mouse when close
+    if(mouse.active){
+      let dx = mouse.x - p.x, dy = mouse.y - p.y;
+      let dist = Math.hypot(dx,dy);
+      if(dist < 140){
+        let force = (140 - dist)/140 * 0.9;
+        p.vx += ( -dx/dist ) * force * 0.03;
+        p.vy += ( -dy/dist ) * force * 0.03;
+      } else if(dist < 260){
+        // gentle attraction
+        p.vx += dx/dist * 0.002;
+        p.vy += dy/dist * 0.002;
+      }
+    }
+    // velocity damping & update
+    p.vx *= 0.995; p.vy *= 0.995;
+    p.x += p.vx; p.y += p.vy;
 
-        // Edge Wrap
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+    // bounds wrap
+    if(p.x < -10) p.x = W + 10;
+    if(p.x > W + 10) p.x = -10;
+    if(p.y < -10) p.y = H + 10;
+    if(p.y > H + 10) p.y = -10;
 
-        // Connect lines
-        particles.forEach(other => {
-            let dist = Math.hypot(p.x - other.x, p.y - other.y);
-            if (dist < 120) {
-                ctx.beginPath();
-                ctx.strokeStyle = "rgba(120,180,255,0.1)";
-                ctx.lineWidth = 1;
-                ctx.moveTo(p.x, p.y);
-                ctx.lineTo(other.x, other.y);
-                ctx.stroke();
-            }
-        });
-    });
+    // draw
+    ctx.beginPath();
+    ctx.fillStyle = `hsla(${p.hue},92%,70%,${p.alpha*0.85})`;
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = 'rgba(0,119,255,0.3)';
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
 
-    requestAnimationFrame(drawParticles);
+  // throttled next frame
+  requestAnimationFrame(step);
 }
+step();
+</script>
 
-drawParticles();
+<!-- ---------------- TABS LOGIC (ACCESSIBLE) ---------------- -->
+<script>
+(function(){
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const panels = Array.from(document.querySelectorAll('.tab-panel'));
+
+  function activateTab(newTab){
+    tabs.forEach(t=>{
+      const sel = (t === newTab);
+      t.setAttribute('aria-selected', sel ? 'true' : 'false');
+      const panel = document.getElementById(t.getAttribute('aria-controls'));
+      if(panel) panel.hidden = !sel;
+    });
+    // move focus for a11y
+    newTab.focus();
+  }
+
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=> activateTab(tab));
+    tab.addEventListener('keydown', (e)=>{
+      const idx = tabs.indexOf(tab);
+      if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){
+        e.preventDefault();
+        activateTab(tabs[(idx+1)%tabs.length]);
+      } else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
+        e.preventDefault();
+        activateTab(tabs[(idx-1+tabs.length)%tabs.length]);
+      } else if(e.key === 'Home'){
+        e.preventDefault();
+        activateTab(tabs[0]);
+      } else if(e.key === 'End'){
+        e.preventDefault();
+        activateTab(tabs[tabs.length-1]);
+      }
+    });
+  });
+
+  // ensure initial state
+  const initiallySelected = tabs.find(t => t.getAttribute('aria-selected') === 'true') || tabs[0];
+  activateTab(initiallySelected);
+})();
 </script>
 
 </body>
