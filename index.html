@@ -4,114 +4,159 @@
 <meta charset="UTF-8">
 <title>Prateek Chauhan • Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-    body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; padding:0; }
-    .container { max-width: 900px; margin: auto; background:white; padding: 30px; }
-    h1, h2 { color:#333; }
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background:#e9ecf1;
+        margin:0; padding:0;
+        color:#222;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background:white;
+        padding: 40px;
+        border-radius:12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+    }
+
+    h1 { font-size: 38px; margin-bottom: 5px; color:#2b2b2b; }
+    h2 {
+        margin-top: 40px;
+        font-size: 26px;
+        color:#444;
+        border-left: 5px solid #0077ff;
+        padding-left:12px;
+    }
+
     .header { text-align:center; padding-bottom:20px; border-bottom:2px solid #eee; }
-    .section { margin-top:30px; }
-    ul { line-height:1.6; }
-    .project, .exp { margin-bottom:20px; }
+    ul { line-height:1.7; margin-top:10px; }
+
+    .project {
+        margin-bottom:20px;
+        padding:15px 20px;
+        background:#f7f9fc;
+        border-radius:10px;
+        border-left:4px solid #0077ff;
+        transition:0.3s;
+    }
+
+    .project:hover {
+        background:#eef4ff;
+        transform:scale(1.01);
+    }
+
+    .proj-link {
+        display:inline-block;
+        margin-top:8px;
+        padding:8px 14px;
+        background:#0077ff;
+        color:white;
+        text-decoration:none;
+        border-radius:6px;
+        font-size:14px;
+        transition:0.25s;
+    }
+
+    .proj-link:hover {
+        background:#005fcc;
+    }
+
     .footer { text-align:center; margin-top:40px; font-size:14px; color:#777; }
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
     <div class="header">
-        <h1>PRATEEK CHAUHAN</h1>
-        <p>Community & QA Specialist • Unity Game Developer</p>
+        <h1>PRATEK CHAUHAN</h1>
+        <p><strong>Community & QA Specialist • Unity Game Developer</strong></p>
         <p>Haridwar, Uttarakhand • +91 7906045075</p>
     </div>
 
-    <div class="section">
-        <h2>Professional Summary</h2>
-        <p>
-            Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years of experience supporting
-            game studios in launching polished, high-engagement products. Skilled in Unity (C#), QA pipelines,
-            Blender workflows, AI/automation, and Solidity smart contract development. Proven track record of
-            growing communities by 15×, boosting daily active users by 200–300%, and collaborating across teams to
-            deliver optimized gameplay and clean production features.
-        </p>
+    <h2>Professional Summary</h2>
+    <p>
+        Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years of experience supporting
+        game studios in launching polished, high-engagement products. Skilled in Unity (C#), QA pipelines,
+        Blender workflows, AI/automation, and Solidity smart contract development. Proven track record of
+        growing communities by 15×, boosting daily active users by 200–300%, and delivering optimized gameplay 
+        and production-ready features.
+    </p>
+
+    <h2>Project Highlights</h2>
+
+    <!-- PROJECT 1 -->
+    <div class="project">
+        <strong>Wealth Management Game (Unity, C#)</strong><br>
+        A 2D management-style strategy game with clean gameplay logic and rapid prototyping.
+        <br>
+        <a class="proj-link" href="https://github.com/yourusername/wealth-management-game" target="_blank">
+            View Project →
+        </a>
     </div>
 
-    <div class="section">
-        <h2>Core Skills</h2>
-        <ul>
-            <li>Community growth & moderation (Discord, Telegram, WhatsApp, App support)</li>
-            <li>Event planning: tournaments, AMAs, campaigns</li>
-            <li>Player engagement & retention strategies</li>
-            <li>Functional, Regression & UAT testing • Bug triage</li>
-            <li>Unity 3D (C#): gameplay, optimization, profiling</li>
-            <li>Blender: modeling, texturing, environments</li>
-            <li>Lighting, VFX (particles), performance tuning</li>
-            <li>C++, Java, Python • Solidity smart contracts</li>
-            <li>Figma (UX wireframes) • Photoshop • Agile/Scrum</li>
-        </ul>
+    <!-- PROJECT 2 -->
+    <div class="project">
+        <strong>Voice-Controlled NPC Dialog System (Python, TensorFlow)</strong><br>
+        Real-time NLP-driven interaction using speech-to-text and neural processing.
+        <br>
+        <a class="proj-link" href="https://github.com/yourusername/voice-npc-ai" target="_blank">
+            View Project →
+        </a>
     </div>
 
-    <div class="section">
-        <h2>Professional Experience</h2>
-
-        <div class="exp">
-            <strong>GLIP.gg — Community Manager & QA Engineer (Nov 2022 – Present)</strong>
-            <ul>
-                <li>Scaled Discord community from 2,000 to 31,000+ members in 7 months.</li>
-                <li>Hosted events with 70–80% participation; boosted DAU by 2×–3×.</li>
-                <li>Designed & executed QA cycles, reducing post-launch defects.</li>
-                <li>Improved build & deployment pipelines through R&D collaboration.</li>
-                <li>Mentored moderators and established SOPs for smooth operations.</li>
-            </ul>
-        </div>
-
-        <div class="exp">
-            <strong>Heyo Entertainment Pvt Ltd — Unity Game Development Intern (Jan 2025 – Jul 2025)</strong>
-            <ul>
-                <li>Developed core gameplay systems improving CPU performance.</li>
-                <li>Created optimized Blender assets reducing build size by 50–100 MB.</li>
-                <li>Automated lighting & VFX presets for faster iteration.</li>
-                <li>Implemented improvements from weekly designer play-tests.</li>
-            </ul>
-        </div>
-
+    <!-- PROJECT 3 -->
+    <div class="project">
+        <strong>Smart-Contract Utilities (Solidity)</strong><br>
+        Ethereum-based automation utilities and wallet modules.
+        <br>
+        <a class="proj-link" href="https://github.com/yourusername/solidity-utilities" target="_blank">
+            View Project →
+        </a>
     </div>
 
-    <div class="section">
-        <h2>Project Highlights</h2>
-
-        <div class="project"><strong>Wealth Management Game (Unity, C#):</strong> 2D management-style game with clean gameplay logic, UI flow and rapid prototyping.</div>
-
-        <div class="project"><strong>Voice-Controlled NPC Dialog System (Python, TensorFlow):</strong> Real-time NLP-driven character interaction.</div>
-
-        <div class="project"><strong>Smart-Contract Utilities (Solidity):</strong> Modules for automation & blockchain logic.</div>
-
-        <div class="project"><strong>Crypto Wallet Entropy Generator (C++):</strong> 132-bit entropy generator with checksum validation, no BIP libraries used.</div>
-
-        <div class="project"><strong>Animation Retargeting System (Unity, C#):</strong> Tool for copying and retargeting humanoid animations using Unity's Avatar system.</div>
+    <!-- PROJECT 4 -->
+    <div class="project">
+        <strong>Crypto Wallet Entropy Generator (C++)</strong><br>
+        132-bit entropy generator with checksum validation (no BIP libraries used).
+        <br>
+        <a class="proj-link" href="https://github.com/yourusername/entropy-generator-cpp" target="_blank">
+            View Project →
+        </a>
     </div>
 
-    <div class="section">
-        <h2>Education</h2>
-        <ul>
-            <li>B.Tech – Computer Science & Engineering – Uttarakhand Technical University (2022)</li>
-            <li>Senior Secondary (Class XII) – Shri Guru Ram Rai Public School (2018)</li>
-            <li>Secondary (Class X) – Shri Guru Ram Rai Public School (2016)</li>
-        </ul>
+    <!-- PROJECT 5 -->
+    <div class="project">
+        <strong>Animation Retargeting System (Unity, C#)</strong><br>
+        Copies and retargets humanoid animations using Unity’s Avatar/Rig system.
+        <br>
+        <a class="proj-link" href="https://github.com/yourusername/animation-retargeting" target="_blank">
+            View Project →
+        </a>
     </div>
 
-    <div class="section">
-        <h2>Certifications & Courses</h2>
-        <ul>
-            <li>3D Game Development Internship — Heyo Entertainment, 2025</li>
-            <li>Android Studio Development — Code With Harry, 2023</li>
-            <li>UI/UX Design — Online Certification, 2022</li>
-            <li>AI Masterminds – AI & Automation Masterclass — Outskill, September 2025</li>
-            <li>Industrial Training in Java — Insergo Technologies Pvt Ltd, 2019</li>
-        </ul>
-    </div>
+    <h2>Education</h2>
+    <ul>
+        <li>B.Tech – Computer Science & Engineering – Uttarakhand Technical University (2022)</li>
+        <li>Senior Secondary (Class XII) – Shri Guru Ram Rai Public School (2018)</li>
+        <li>Secondary (Class X) – Shri Guru Ram Rai Public School (2016)</li>
+    </ul>
+
+    <h2>Certifications & Courses</h2>
+    <ul>
+        <li>3D Game Development Internship — Heyo Entertainment, 2025</li>
+        <li>Android Studio Development — Code With Harry, 2023</li>
+        <li>UI/UX Design — Online Certification, 2022</li>
+        <li>AI Masterminds – AI & Automation Masterclass — Outskill, Sep 2025</li>
+        <li>Industrial Training in Java — Insergo Technologies Pvt Ltd, 2019</li>
+    </ul>
 
     <div class="footer">© 2025 Prateek Chauhan — Portfolio Website</div>
 </div>
+
 </body>
 </html>
