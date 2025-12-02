@@ -5,49 +5,47 @@
 <title>Prateek Chauhan • Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- SEO -->
 <meta name="description" content="Portfolio of Prateek Chauhan — Community & QA Specialist, Unity Game Developer, Blender Artist, and Blockchain Developer." />
 <meta name="theme-color" content="#0b0f18" />
 
-<!-- Social Preview -->
-<meta property="og:title" content="Prateek Chauhan • Portfolio" />
-<meta property="og:description" content="Community Manager, QA Specialist, Unity Game Developer." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://yourusername.github.io/reponame/preview.png" />
-
-<!-- Faster Google Font Loading -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 
 <style>
+/* Base Layout */
 body {
     font-family: "Montserrat", sans-serif;
-    background: linear-gradient(135deg, #05060a, #0b0f18);
     margin: 0;
     padding: 0;
     color: #e6e6e6;
+    background: #05060a;
     overflow-x: hidden;
 }
 
-/* Fade-in animation */
+/* Particle Canvas (Behind Everything) */
+#particles {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+/* Fade In Animation */
 * {
     animation: fadeIn 0.9s ease forwards;
     opacity: 0;
 }
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
+@keyframes fadeIn { to { opacity: 1; } }
 
 .container {
     max-width: 950px;
     margin: 40px auto;
     padding: 40px;
-    background: rgba(15, 20, 35, 0.65);
+    background: rgba(15, 20, 35, 0.6);
     border-radius: 12px;
     border: 1px solid #0a2345;
-    box-shadow: 0 0 25px #0077ff44, 0 0 8px #0077ff22;
     backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px #0077ff44, 0 0 8px #0077ff22;
 }
 
 h1 {
@@ -64,8 +62,8 @@ h2 {
     font-size: 26px;
     font-family: "Orbitron", sans-serif;
     color: #70baff;
-    padding-left: 12px;
     border-left: 5px solid #0077ff;
+    padding-left: 12px;
     text-shadow: 0 0 8px #006eff;
 }
 
@@ -75,41 +73,31 @@ h2 {
     border-bottom: 2px solid #0f2444;
 }
 
-ul {
-    line-height: 1.7;
-    margin-top: 10px;
-}
-
-.project,
-.exp {
+/* Clickable Cards */
+.project, .exp {
     margin-bottom: 25px;
     padding: 18px 20px;
-    background: rgba(30, 40, 60, 0.6);
+    background: rgba(30, 40, 60, 0.55);
     border-left: 4px solid #00aaff;
     border-radius: 12px;
-    box-shadow: inset 0 0 12px #003e77;
     transition: 0.3s ease;
+    box-shadow: inset 0 0 12px #003e77;
 }
 
-.project:hover,
-.exp:hover {
+.project {
+    cursor: pointer;
+}
+
+.project:hover, .exp:hover {
     background: rgba(45, 60, 90, 0.9);
     transform: scale(1.03);
-    box-shadow: 0 0 20px #008cff88, inset 0 0 20px #005599;
+    box-shadow: 0 0 25px #008cffaa;
 }
 
-.proj-link {
-    display: inline-block;
-    margin-top: 10px;
-    color: #7fc6ff;
-    font-weight: bold;
+.project-link {
     text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.proj-link:hover {
-    color: #a8ddff;
-    text-shadow: 0 0 8px #008cff;
+    color: inherit;
+    display: block;
 }
 
 .footer {
@@ -119,16 +107,12 @@ ul {
     font-size: 14px;
 }
 
-/* RESPONSIVE DESIGN */
+/* Responsive */
 @media (max-width: 768px) {
-    .container {
-        padding: 25px;
-        margin: 20px;
-    }
+    .container { padding: 25px; margin: 20px; }
     h1 { font-size: 32px; }
     h2 { font-size: 22px; }
 }
-
 @media (max-width: 480px) {
     h1 { font-size: 28px; }
     body { font-size: 15px; }
@@ -137,6 +121,10 @@ ul {
 </head>
 
 <body>
+
+<!-- PARTICLE BACKGROUND CANVAS -->
+<canvas id="particles"></canvas>
+
 <div class="container">
 
     <div class="header">
@@ -148,103 +136,148 @@ ul {
     <h2>Professional Summary</h2>
     <p>
         Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years of experience supporting
-        game studios in launching polished, high-engagement products. Skilled in Unity (C#), QA pipelines,
-        Blender workflows, AI automation, and Solidity smart contract development. Proven track record of
-        growing communities by 15×, boosting daily active users by 200–300%, and delivering optimized gameplay
-        and production-ready features.
+        game studios in launching polished, high-engagement products.
     </p>
 
     <h2>Core Skills</h2>
     <ul>
-        <li>Community growth & moderation (Discord, Telegram, WhatsApp, App support)</li>
+        <li>Community growth & moderation</li>
         <li>Event planning: tournaments, AMAs, gaming campaigns</li>
         <li>Player engagement & retention strategies</li>
-        <li>Functional, Regression & UAT testing • Bug triage</li>
-        <li>Unity 3D (C#): gameplay, optimization, profiling</li>
-        <li>Blender: modeling, texturing, environments</li>
-        <li>Lighting, VFX (particles), performance tuning</li>
-        <li>C++, Java, Python • Solidity smart contracts</li>
-        <li>Figma (UX wireframes) • Photoshop • Agile/Scrum</li>
+        <li>Functional, Regression & UAT testing</li>
+        <li>Unity 3D (C#) • Blender • Lighting • VFX</li>
+        <li>C++, Java, Python • Solidity</li>
+        <li>Figma • Photoshop • Agile/Scrum</li>
     </ul>
 
     <h2>Professional Experience</h2>
 
     <div class="exp">
-        <strong>GLIP.gg — Community Manager & QA Engineer (Nov 2022 – Present)</strong>
+        <strong>GLIP.gg — Community Manager & QA Engineer</strong>
         <ul>
-            <li>Scaled Discord community from 2,000 → 31,000+ members in 7 months.</li>
-            <li>Hosted events with 70–80% participation; boosted DAU by 2×–3×.</li>
-            <li>Designed & executed QA cycles reducing post-launch defects.</li>
-            <li>Optimized build & deployment pipelines with R&D.</li>
-            <li>Mentored moderators; established stable SOP workflows.</li>
+            <li>Scaled Discord community 2k → 31k+ in 7 months</li>
+            <li>Boosted DAU by 2×–3×</li>
+            <li>Reduced defects with structured QA cycles</li>
         </ul>
     </div>
 
     <div class="exp">
-        <strong>Heyo Entertainment Pvt Ltd — Unity Game Development Intern (Jan 2025 – Jul 2025)</strong>
+        <strong>Heyo Entertainment — Unity Game Dev Intern</strong>
         <ul>
-            <li>Developed high-performance gameplay systems (Unity, C#).</li>
-            <li>Optimized Blender assets reducing build size by 50–100 MB.</li>
-            <li>Automated lighting & VFX presets improving workflow speed.</li>
-            <li>Implemented improvements based on weekly testing cycles.</li>
+            <li>Developed gameplay systems (Unity, C#)</li>
+            <li>Optimized Blender assets by 100MB</li>
+            <li>Created automated lighting + VFX workflows</li>
         </ul>
     </div>
 
-    <h2>Project Highlights</h2>
+    <h2>Projects</h2>
 
-    <div class="project">
-        <strong>Wealth Management Game (Unity, C#):</strong><br />
-        A futuristic 2D management strategy game with clean UI flow & rapid prototyping.<br />
-        <a class="proj-link" target="_blank" rel="noopener noreferrer"
-            href="https://github.com/yourusername/wealth-management-game">➜ View Project</a>
-    </div>
+    <a class="project-link" href="https://github.com/yourusername/wealth-management-game" target="_blank">
+        <div class="project">
+            <strong>Wealth Management Game (Unity)</strong><br>
+            Futuristic 2D strategy game with optimized UI flow.
+        </div>
+    </a>
 
-    <div class="project">
-        <strong>Voice-Controlled NPC Dialog System (Python, TensorFlow):</strong><br />
-        Real-time NLP-driven character interaction using AI speech processing.<br />
-        <a class="proj-link" target="_blank" rel="noopener noreferrer"
-            href="https://github.com/yourusername/voice-npc-ai">➜ View Project</a>
-    </div>
+    <a class="project-link" href="https://github.com/yourusername/voice-npc-ai" target="_blank">
+        <div class="project">
+            <strong>Voice-Controlled NPC Dialog System</strong><br>
+            Real-time AI-driven NPC interaction.
+        </div>
+    </a>
 
-    <div class="project">
-        <strong>Smart-Contract Utilities (Solidity):</strong><br />
-        Automation & wallet logic modules for blockchain game utilities.<br />
-        <a class="proj-link" target="_blank" rel="noopener noreferrer"
-            href="https://github.com/yourusername/solidity-utilities">➜ View Project</a>
-    </div>
+    <a class="project-link" href="https://github.com/yourusername/solidity-utilities" target="_blank">
+        <div class="project">
+            <strong>Smart Contract Utilities</strong><br>
+            Solidity modules for blockchain-enabled games.
+        </div>
+    </a>
 
-    <div class="project">
-        <strong>Crypto Wallet Entropy Generator (C++):</strong><br />
-        Pure 132-bit entropy generator with checksum validation, no BIP libs used.<br />
-        <a class="proj-link" target="_blank" rel="noopener noreferrer"
-            href="https://github.com/yourusername/entropy-generator-cpp">➜ View Project</a>
-    </div>
+    <a class="project-link" href="httpsgithub.com/yourusername/entropy-generator-cpp" target="_blank">
+        <div class="project">
+            <strong>132-bit Entropy Generator (C++)</strong><br>
+            Custom crypto entropy generator, no BIP libs.
+        </div>
+    </a>
 
-    <div class="project">
-        <strong>Animation Retargeting System (Unity, C#):</strong><br />
-        Automated humanoid animation retargeting using Unity Avatar system.<br />
-        <a class="proj-link" target="_blank" rel="noopener noreferrer"
-            href="https://github.com/yourusername/animation-retargeting">➜ View Project</a>
-    </div>
-
-    <h2>Education</h2>
-    <ul>
-        <li>B.Tech – Computer Science & Engineering – Uttarakhand Technical University (2022)</li>
-        <li>Senior Secondary (Class XII) – Shri Guru Ram Rai Public School (2018)</li>
-        <li>Secondary (Class X) – Shri Guru Ram Rai Public School (2016)</li>
-    </ul>
-
-    <h2>Certifications & Courses</h2>
-    <ul>
-        <li>3D Game Development Internship — Heyo Entertainment, 2025</li>
-        <li>Android Studio Development — Code With Harry, 2023</li>
-        <li>UI/UX Design — Online Certification, 2022</li>
-        <li>AI Masterminds – AI & Automation Masterclass — Outskill, 2025</li>
-        <li>Industrial Training in Java — Insergo Technologies Pvt Ltd, 2019</li>
-    </ul>
+    <a class="project-link" href="https://github.com/yourusername/animation-retargeting" target="_blank">
+        <div class="project">
+            <strong>Animation Retargeting System (Unity)</strong><br>
+            Automated humanoid animation retargeting.
+        </div>
+    </a>
 
     <div class="footer">© 2025 Prateek Chauhan — Game Dev Portfolio</div>
 
 </div>
+
+<!-- PARTICLE BACKGROUND SCRIPT -->
+<script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+const count = 80;
+
+// Resize canvas
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+// Create particle objects
+for (let i = 0; i < count; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.7,
+        dy: (Math.random() - 0.5) * 0.7
+    });
+}
+
+function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "#7fc6ff";
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = "#0077ff";
+        ctx.fill();
+
+        // Motion
+        p.x += p.dx;
+        p.y += p.dy;
+
+        // Edge Wrap
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        // Connect lines
+        particles.forEach(other => {
+            let dist = Math.hypot(p.x - other.x, p.y - other.y);
+            if (dist < 120) {
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(120,180,255,0.1)";
+                ctx.lineWidth = 1;
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(other.x, other.y);
+                ctx.stroke();
+            }
+        });
+    });
+
+    requestAnimationFrame(drawParticles);
+}
+
+drawParticles();
+</script>
+
 </body>
 </html>
