@@ -1,267 +1,142 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Prateek Chauhan • Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
-
-    body {
-        font-family: "Montserrat", sans-serif;
-        background: linear-gradient(135deg, #05060a, #0b0f18);
-        margin:0; padding:0;
-        color:#e6e6e6;
-    }
-
-    .container {
-        max-width: 950px;
-        margin: 40px auto;
-        background: rgba(15, 20, 35, 0.65);
-        padding: 40px;
-        border-radius:12px;
-        box-shadow: 0 0 25px #0077ff44, 0 0 8px #0077ff22;
-        border: 1px solid #0a2345;
-        backdrop-filter: blur(12px);
-    }
-
-    h1 {
-        font-family: "Orbitron", sans-serif;
-        font-size: 42px;
-        letter-spacing: 3px;
-        color:#7fc6ff;
-        margin-bottom: 5px;
-        text-shadow: 0 0 10px #0077ff;
-    }
-
-    h2 {
-        margin-top: 40px;
-        font-size: 26px;
-        font-family: "Orbitron", sans-serif;
-        color:#70baff;
-        border-left: 5px solid #0077ff;
-        padding-left:12px;
-        text-shadow: 0 0 8px #006eff;
-    }
-
-    .header {
-        text-align:center;
-        padding-bottom:20px;
-        border-bottom:2px solid #0f2444;
-    }
-
-    ul { line-height:1.7; margin-top:10px; }
-
-    .project, .exp {
-        margin-bottom:25px;
-        padding:18px 20px;
-        background: rgba(30, 40, 60, 0.6);
-        border-radius:12px;
-        border-left:4px solid #00aaff;
-        transition:0.3s;
-        box-shadow: inset 0 0 12px #003e77;
-    }
-
-    .project:hover, .exp:hover {
-        background: rgba(45, 60, 90, 0.9);
-        transform:scale(1.02);
-        box-shadow: 0 0 20px #008cff88;
-    }
-
-    .footer {
-        text-align:center;
-        margin-top:40px;
-        font-size:14px;
-        color:#88aadd;
-    }
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="header">
-        <h1>PRATEEK CHAUHAN</h1>
-        <p><strong>Community & QA Specialist • Unity Game Developer</strong></p>
-        <p>Haridwar, Uttarakhand • +91 7906045075</p>
-    </div>
-
-    <h2>Professional Summary</h2>
-    <p>
-        Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years in game studio 
-        environments. Skilled in Unity (C#), QA pipelines, Blender workflows, AI automation, and 
-        Solidity smart contracts. Proven track record of scaling gaming communities, 
-        boosting player engagement, and shipping polished, optimized features.
-    </p>
-
-    <h2>Core Skills</h2>
-    <ul>
-        <li>Community growth & moderation (Discord, Telegram, WhatsApp, App support)</li>
-        <li>Event planning: tournaments, AMAs, gaming campaigns</li>
-        <li>Player engagement & retention strategies</li>
-        <li>Functional, Regression & UAT testing • Bug triage</li>
-        <li>Unity 3D (C#): gameplay, optimization, profiling</li>
-        <li>Blender: modeling, texturing, environments</li>
-        <li>Lighting, VFX (particles), performance tuning</li>
-        <li>C++, Java, Python • Solidity smart contracts</li>
-        <li>Figma (UX wireframes) • Photoshop • Agile/Scrum</li>
-    </ul>
-
-    <h2>Professional Experience</h2>
-
-    <div class="exp">
-        <strong>GLIP.gg — Community Manager & QA Engineer (Nov 2022 – Present)</strong>
-        <ul>
-            <li>Scaled Discord community from 2,000 → 31,000+ members in 7 months.</li>
-            <li>Hosted events with 70–80% participation; boosted DAU by 2×–3×.</li>
-            <li>Designed & executed QA cycles reducing post-launch defects.</li>
-            <li>Optimized build & deployment pipelines with R&D.</li>
-            <li>Mentored moderators; established stable SOP workflows.</li>
-        </ul>
-    </div>
-
-    <div class="exp">
-        <strong>Heyo Entertainment Pvt Ltd — Unity Game Development Intern (Jan 2025 – Jul 2025)</strong>
-        <ul>
-            <li>Developed high-performance gameplay systems (Unity, C#).</li>
-            <li>Optimized Blender assets reducing build size by 50–100 MB.</li>
-            <li>Automated lighting & VFX presets improving workflow speed.</li>
-            <li>Implemented improvements based on weekly testing cycles.</li>
-        </ul>
-    </div>
-
-    <h2>Project Highlights</h2>
-
-    <div class="project"><strong>Wealth Management Game (Unity, C#):</strong> Futuristic 2D strategy game with clean UI flow & dynamic gameplay.</div>
-
-    <div class="project"><strong>Voice-Controlled NPC Dialog System (Python, TensorFlow):</strong> Real-time NLP-driven NPC interaction using STT + AI logic.</div>
-
-    <div class="project"><strong>Smart-Contract Utilities (Solidity):</strong> Blockchain automation modules built for scalable gaming utilities.</div>
-
-    <div class="project"><strong>Crypto Wallet Entropy Generator (C++):</strong> Secure 132-bit entropy generator with checksum validation.</div>
-
-    <div class="project"><strong>Animation Retargeting System (Unity, C#):</strong> Automatic humanoid animation retargeting using Unity’s Avatar system.</div>
-
-    <h2>Education</h2>
-    <ul>
-        <li>B.Tech – Computer Science & Engineering – Uttarakhand Technical University (2022)</li>
-        <li>Senior Secondary (Class XII) – Shri Guru Ram Rai Public School (2018)</li>
-        <li>Secondary (Class X) – Shri Guru Ram Rai Public School (2016)</li>
-    </ul>
-
-    <h2>Certifications & Courses</h2>
-    <ul>
-        <li>3D Game Development Internship — Heyo Entertainment, 2025</li>
-        <li>Android Studio Development — Code With Harry, 2023</li>
-        <li>UI/UX Design — Online Certification, 2022</li>
-        <li>AI Masterminds – AI & Automation Masterclass — Outskill, 2025</li>
-        <li>Industrial Training in Java — Insergo Technologies Pvt Ltd, 2019</li>
-    </ul>
-
-    <div class="footer">© 2025 Prateek Chauhan — Game Dev Portfolio</div>
-</div>
-
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Prateek Chauhan • Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- SEO -->
+<meta name="description" content="Portfolio of Prateek Chauhan — Community & QA Specialist, Unity Game Developer, Blender Artist, and Blockchain Developer." />
+<meta name="theme-color" content="#0b0f18" />
+
+<!-- Social Preview -->
+<meta property="og:title" content="Prateek Chauhan • Portfolio" />
+<meta property="og:description" content="Community Manager, QA Specialist, Unity Game Developer." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://yourusername.github.io/reponame/preview.png" />
+
+<!-- Faster Google Font Loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(135deg, #05060a, #0b0f18);
+    margin: 0;
+    padding: 0;
+    color: #e6e6e6;
+    overflow-x: hidden;
+}
 
-    body {
-        font-family: "Montserrat", sans-serif;
-        background: linear-gradient(135deg, #05060a, #0b0f18);
-        margin:0; padding:0;
-        color:#e6e6e6;
-    }
+/* Fade-in animation */
+* {
+    animation: fadeIn 0.9s ease forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
 
+.container {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(15, 20, 35, 0.65);
+    border-radius: 12px;
+    border: 1px solid #0a2345;
+    box-shadow: 0 0 25px #0077ff44, 0 0 8px #0077ff22;
+    backdrop-filter: blur(12px);
+}
+
+h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 42px;
+    letter-spacing: 3px;
+    color: #7fc6ff;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px #0077ff;
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 26px;
+    font-family: "Orbitron", sans-serif;
+    color: #70baff;
+    padding-left: 12px;
+    border-left: 5px solid #0077ff;
+    text-shadow: 0 0 8px #006eff;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #0f2444;
+}
+
+ul {
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+.project,
+.exp {
+    margin-bottom: 25px;
+    padding: 18px 20px;
+    background: rgba(30, 40, 60, 0.6);
+    border-left: 4px solid #00aaff;
+    border-radius: 12px;
+    box-shadow: inset 0 0 12px #003e77;
+    transition: 0.3s ease;
+}
+
+.project:hover,
+.exp:hover {
+    background: rgba(45, 60, 90, 0.9);
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #008cff88, inset 0 0 20px #005599;
+}
+
+.proj-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #7fc6ff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.proj-link:hover {
+    color: #a8ddff;
+    text-shadow: 0 0 8px #008cff;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #88aadd;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
     .container {
-        max-width: 950px;
-        margin: 40px auto;
-        background: rgba(15, 20, 35, 0.65);
-        padding: 40px;
-        border-radius:12px;
-        box-shadow: 0 0 25px #0077ff44, 0 0 8px #0077ff22;
-        border: 1px solid #0a2345;
-        backdrop-filter: blur(12px);
+        padding: 25px;
+        margin: 20px;
     }
+    h1 { font-size: 32px; }
+    h2 { font-size: 22px; }
+}
 
-    h1 {
-        font-family: "Orbitron", sans-serif;
-        font-size: 42px;
-        letter-spacing: 3px;
-        color:#7fc6ff;
-        margin-bottom: 5px;
-        text-shadow: 0 0 10px #0077ff;
-    }
-
-    h2 {
-        margin-top: 40px;
-        font-size: 26px;
-        font-family: "Orbitron", sans-serif;
-        color:#70baff;
-        border-left: 5px solid #0077ff;
-        padding-left:12px;
-        text-shadow: 0 0 8px #006eff;
-    }
-
-    .header {
-        text-align:center;
-        padding-bottom:20px;
-        border-bottom:2px solid #0f2444;
-    }
-
-    ul { line-height:1.7; margin-top:10px; }
-
-    .project, .exp {
-        margin-bottom:25px;
-        padding:18px 20px;
-        background: rgba(30, 40, 60, 0.6);
-        border-radius:12px;
-        border-left:4px solid #00aaff;
-        transition:0.3s;
-        box-shadow: inset 0 0 12px #003e77;
-    }
-
-    .project:hover, .exp:hover {
-        background: rgba(45, 60, 90, 0.9);
-        transform:scale(1.02);
-        box-shadow: 0 0 20px #008cff88;
-    }
-
-    .proj-link {
-        display:inline-block;
-        margin-top:10px;
-        color:#ffffff;
-        text-decoration:none;
-        font-weight:bold;
-        transition:0.2s;
-    }
-
-    .proj-link:hover {
-        color:#a8ddff;
-        text-shadow:0 0 8px #008cff;
-    }
-
-    .footer {
-        text-align:center;
-        margin-top:40px;
-        font-size:14px;
-        color:#88aadd;
-    }
+@media (max-width: 480px) {
+    h1 { font-size: 28px; }
+    body { font-size: 15px; }
+}
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
     <div class="header">
@@ -318,47 +193,38 @@
     <h2>Project Highlights</h2>
 
     <div class="project">
-        <strong>Wealth Management Game (Unity, C#):</strong><br>
-        A futuristic 2D management strategy game with clean UI flow & rapid prototyping.
-        <br>
-        <a class="proj-link" href="https://github.com/yourusername/wealth-management-game" target="_blank">
-            ➜ View Project
-        </a>
+        <strong>Wealth Management Game (Unity, C#):</strong><br />
+        A futuristic 2D management strategy game with clean UI flow & rapid prototyping.<br />
+        <a class="proj-link" target="_blank" rel="noopener noreferrer"
+            href="https://github.com/yourusername/wealth-management-game">➜ View Project</a>
     </div>
 
     <div class="project">
-        <strong>Voice-Controlled NPC Dialog System (Python, TensorFlow):</strong><br>
-        Real-time NLP-driven character interaction using AI speech processing.
-        <br>
-        <a class="proj-link" href="https://github.com/yourusername/voice-npc-ai" target="_blank">
-            ➜ View Project
-        </a>
+        <strong>Voice-Controlled NPC Dialog System (Python, TensorFlow):</strong><br />
+        Real-time NLP-driven character interaction using AI speech processing.<br />
+        <a class="proj-link" target="_blank" rel="noopener noreferrer"
+            href="https://github.com/yourusername/voice-npc-ai">➜ View Project</a>
     </div>
 
     <div class="project">
-        
-        <a class="proj-link" href="https://github.com/yourusername/solidity-utilities" target="_blank">
-           <strong>Smart-Contract Utilities (Solidity):</strong><br>
-        Automation & wallet logic modules for blockchain game utilities.
-        </a>
+        <strong>Smart-Contract Utilities (Solidity):</strong><br />
+        Automation & wallet logic modules for blockchain game utilities.<br />
+        <a class="proj-link" target="_blank" rel="noopener noreferrer"
+            href="https://github.com/yourusername/solidity-utilities">➜ View Project</a>
     </div>
 
     <div class="project">
-        <strong>Crypto Wallet Entropy Generator (C++):</strong><br>
-        Pure 132-bit entropy generator with checksum validation, no BIP libs used.
-        <br>
-        <a class="proj-link" href="https://github.com/yourusername/entropy-generator-cpp" target="_blank">
-            ➜ View Project
-        </a>
+        <strong>Crypto Wallet Entropy Generator (C++):</strong><br />
+        Pure 132-bit entropy generator with checksum validation, no BIP libs used.<br />
+        <a class="proj-link" target="_blank" rel="noopener noreferrer"
+            href="https://github.com/yourusername/entropy-generator-cpp">➜ View Project</a>
     </div>
 
     <div class="project">
-        <strong>Animation Retargeting System (Unity, C#):</strong><br>
-        Automated humanoid animation retargeting using Unity Avatar system.
-        <br>
-        <a class="proj-link" href="https://github.com/yourusername/animation-retargeting" target="_blank">
-            ➜ View Project
-        </a>
+        <strong>Animation Retargeting System (Unity, C#):</strong><br />
+        Automated humanoid animation retargeting using Unity Avatar system.<br />
+        <a class="proj-link" target="_blank" rel="noopener noreferrer"
+            href="https://github.com/yourusername/animation-retargeting">➜ View Project</a>
     </div>
 
     <h2>Education</h2>
@@ -378,7 +244,7 @@
     </ul>
 
     <div class="footer">© 2025 Prateek Chauhan — Game Dev Portfolio</div>
-</div>
 
+</div>
 </body>
 </html>
