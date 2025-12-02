@@ -97,9 +97,33 @@ h1 {
 }
 .icon svg { width:100%; height:100%; }
 
+/* ---------- CV BUTTON ---------- */
+.cv-button {
+    margin: 22px auto 0 auto;
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #a8ddff;
+    border: 2px solid #00aaff;
+    border-radius: 12px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 12px rgba(0,150,255,0.3),
+                inset 0 0 6px rgba(0,100,255,0.2);
+}
+.cv-button:hover {
+    color: #eaffff;
+    background: rgba(0,120,255,0.18);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,170,255,0.55),
+                inset 0 0 12px rgba(0,100,255,0.35);
+}
+
 /* ---------- SECTION HEADERS ---------- */
 h2 {
-  margin-top: 28px;
+  margin-top: 32px;
   font-family: "Orbitron", sans-serif;
   font-size: 26px;
   color: #70baff;
@@ -161,6 +185,7 @@ h3 {
         <p><strong>Community & QA Specialist • Unity Game Developer</strong></p>
         <p>Haridwar, Uttarakhand • +91 7906045075</p>
 
+        <!-- SOCIAL ICONS -->
         <div class="social-icons">
             <a href="https://linkedin.com" class="icon" target="_blank">
                 <svg viewBox="0 0 24 24"><path fill="currentColor"
@@ -177,14 +202,19 @@ h3 {
                     d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.76 14.83 16.27 14.72 16.7 14.88C18.06 15.36 19.53 15.61 21 15.61C21.55 15.61 22 16.06 22 16.61V21C22 21.55 21.55 22 21 22C10.51 22 2 13.49 2 3C2 2.45 2.45 2 3 2H7.39C7.94 2 8.39 2.45 8.39 3C8.39 4.47 8.64 5.94 9.12 7.3C9.27 7.73 9.17 8.24 8.82 8.59L6.62 10.79Z"/></svg>
             </a>
         </div>
+
+        <!-- DOWNLOAD CV -->
+        <a class="cv-button" href="Prateek-Chauhan-CV.pdf" download>
+            Download CV
+        </a>
     </div>
 
     <!-- OVERVIEW -->
     <h2>Overview</h2>
     <p>
-        Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years experience supporting
+        Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years of experience supporting
         game studios in launching polished, high-engagement products. Strong in Unity (C#), QA workflows, Blender,
-        automation & Solidity.
+        automation, and Solidity.
     </p>
 
     <!-- SKILLS -->
@@ -192,13 +222,62 @@ h3 {
     <ul>
         <li>Community Management: Discord, Telegram, WhatsApp, events, retention</li>
         <li>QA Testing: Functional, Regression, UAT, bug triage</li>
-        <li>Unity Game Development: gameplay systems, profiling, optimization</li>
-        <li>Art & VFX: Blender modeling, texturing, lighting, particle effects</li>
-        <li>Languages: C#, C++, Python, Java, Solidity</li>
-        <li>Design Tools: Figma, Photoshop • Agile/Scrum pipelines</li>
+        <li>Unity Game Development: gameplay systems, optimization, profiling</li>
+        <li>Art Tools: Blender modeling, lighting, texturing, VFX</li>
+        <li>Programming: C#, C++, Python, Java, Solidity</li>
+        <li>Design & Workflow: Figma, Photoshop, Agile/Scrum</li>
     </ul>
 
-    <!-- QUALIFICATIONS -->
+   
+    <!-- EXPERIENCE -->
+    <h2>Professional Experience</h2>
+
+    <div class="exp">
+        <strong>GLIP.gg — Community Manager & QA Engineer (Nov 2022 – Present)</strong>
+        <ul>
+            <li>Scaled Discord community from 2,000 → 31,000+ members</li>
+            <li>Boosted DAU by 200–300% through optimized events</li>
+            <li>Created QA test cycles and reduced post-launch issues</li>
+        </ul>
+    </div>
+
+    <div class="exp">
+        <strong>Heyo Entertainment — Unity Game Dev Intern (Jan 2025 – Jul 2025)</strong>
+        <ul>
+            <li>Built high-performance gameplay systems</li>
+            <li>Optimized Blender assets, reducing build size by ~100MB</li>
+            <li>Automated lighting, VFX, and workflow tools</li>
+        </ul>
+    </div>
+
+    <!-- PROJECTS -->
+    <h2>Projects</h2>
+
+    <a class="project-link" href="https://github.com/yourusername/wealth-management-game" target="_blank">
+        <div class="project"><strong>Wealth Management Game (Unity)</strong><br>
+        Futuristic 2D management strategy prototype.</div>
+    </a>
+
+    <a class="project-link" href="https://github.com/yourusername/voice-npc-ai" target="_blank">
+        <div class="project"><strong>Voice-Controlled NPC Dialog (AI + Python)</strong><br>
+        Real-time NLP-driven speech interaction.</div>
+    </a>
+
+    <a class="project-link" href="https://github.com/yourusername/solidity-utilities" target="_blank">
+        <div class="project"><strong>Solidity Utility Contracts</strong><br>
+        Smart-contract modules for blockchain games.</div>
+    </a>
+
+    <a class="project-link" href="https://github.com/yourusername/entropy-generator-cpp" target="_blank">
+        <div class="project"><strong>132-bit Entropy Generator (C++)</strong><br>
+        Pure entropy generator with checksum validation.</div>
+    </a>
+
+    <a class="project-link" href="https://github.com/yourusername/animation-retargeting" target="_blank">
+        <div class="project"><strong>Animation Retargeting (Unity)</strong><br>
+        Automated humanoid retargeting pipeline.</div>
+    </a>
+   <!-- QUALIFICATIONS -->
     <h2>Qualifications</h2>
 
     <h3>Education</h3>
@@ -212,69 +291,10 @@ h3 {
     <ul>
         <li>3D Game Development Internship — Heyo Entertainment, 2025</li>
         <li>AI Automation Masterclass — Outskill, 2025</li>
-        <li>Android Studio Development — 2023</li>
+        <li>Android App Development — 2023</li>
         <li>UI/UX Design Certification — 2022</li>
-        <li>Java Industrial Training — Insergo Technologies, 2019</li>
+        <li>Industrial Java Training — Insergo Technologies, 2019</li>
     </ul>
-
-    <!-- EXPERIENCE -->
-    <h2>Professional Experience</h2>
-
-    <div class="exp">
-        <strong>GLIP.gg — Community Manager & QA Engineer (2022–Present)</strong>
-        <ul>
-            <li>Grew Discord from 2k → 31k+ members</li>
-            <li>Boosted DAU by 2×–3×</li>
-            <li>Established QA cycles to reduce defects</li>
-        </ul>
-    </div>
-
-    <div class="exp">
-        <strong>Heyo Entertainment — Unity Game Dev Intern (2025)</strong>
-        <ul>
-            <li>Developed gameplay systems in Unity</li>
-            <li>Reduced Blender asset size by ~100MB</li>
-            <li>Automated lighting + VFX workflows</li>
-        </ul>
-    </div>
-
-    <!-- PROJECTS -->
-    <h2>Projects</h2>
-
-    <a class="project-link" href="https://github.com/yourusername/wealth-management-game" target="_blank">
-        <div class="project">
-            <strong>Wealth Management Game (Unity)</strong><br>
-            2D management strategy prototype.
-        </div>
-    </a>
-
-    <a class="project-link" href="https://github.com/yourusername/voice-npc-ai" target="_blank">
-        <div class="project">
-            <strong>Voice-Controlled NPC Dialog</strong><br>
-            Real-time AI voice interaction.
-        </div>
-    </a>
-
-    <a class="project-link" href="https://github.com/yourusername/solidity-utilities" target="_blank">
-        <div class="project">
-            <strong>Solidity Utility Contracts</strong><br>
-            Blockchain utilities for game systems.
-        </div>
-    </a>
-
-    <a class="project-link" href="https://github.com/yourusername/entropy-generator-cpp" target="_blank">
-        <div class="project">
-            <strong>132-bit Entropy Generator (C++)</strong><br>
-            Custom RNG crypto implementation.
-        </div>
-    </a>
-
-    <a class="project-link" href="https://github.com/yourusername/animation-retargeting" target="_blank">
-        <div class="project">
-            <strong>Animation Retargeting (Unity)</strong><br>
-            Automated humanoid avatar retargeting.
-        </div>
-    </a>
 
     <div class="footer">© 2025 Prateek Chauhan — Game Dev Portfolio</div>
 
