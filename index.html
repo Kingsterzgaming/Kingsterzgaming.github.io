@@ -1,366 +1,795 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<title>Prateek Chauhan • Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Prateek Chauhan • Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Portfolio of Prateek Chauhan — Community & QA Specialist, Unity Game Developer, Blender Artist, and Blockchain Developer." />
+    <meta name="theme-color" content="#0b0f18" />
+    <meta property="og:title" content="Prateek Chauhan • Portfolio" />
+    <meta property="og:description"
+        content="Community & QA Specialist | Unity Game Developer | AI Builder | Blockchain Dev" />
 
-<meta name="description" content="Portfolio of Prateek Chauhan — Community & QA Specialist, Unity Game Developer, Blender Artist, and Blockchain Developer." />
-<meta name="theme-color" content="#0b0f18" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+        /* ===================== RESET & BASE ===================== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-/* ---------- BASE ---------- */
-:root {
-  --bg1:#05060a;
-  --panel-bg: rgba(15,20,35,0.6);
-  --accent:#0077ff;
-  --accent-2:#7fc6ff;
-  --muted:#88aadd;
-}
-* { box-sizing:border-box; }
-body {
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #e6e6e6;
-    background: var(--bg1);
-    overflow-x: hidden;
-}
+        :root {
+            --bg: #05060a;
+            --panel: rgba(12, 18, 32, 0.72);
+            --accent: #0077ff;
+            --accent2: #7fc6ff;
+            --accent3: #00d4ff;
+            --muted: #88aadd;
+            --border: rgba(0, 120, 255, 0.22);
+            --glow: 0 0 24px rgba(0, 119, 255, 0.35);
+            --glow-lg: 0 0 50px rgba(0, 140, 255, 0.45), 0 0 100px rgba(0, 80, 200, 0.2);
+        }
 
-/* Particle Canvas */
-#particles {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* Fade In */
-* {
-    animation: fadeIn 0.9s ease forwards;
-    opacity: 0;
-}
-@keyframes fadeIn { to { opacity:1; } }
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: var(--bg);
+            color: #ddeeff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-/* Main Container */
-.container {
-    max-width: 980px;
-    margin: 36px auto;
-    padding: 34px;
-    background: var(--panel-bg);
-    border-radius: 12px;
-    border: 1px solid #0a2345;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 0 30px rgba(0,119,255,0.18),
-                0 0 10px rgba(0,119,255,0.08);
-}
+        /* custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
 
-/* ---------- HEADER ---------- */
-.header {
-    text-align: center;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #0f2444;
-}
-h1 {
-    font-family: "Orbitron", sans-serif;
-    font-size: 40px;
-    letter-spacing: 3px;
-    color: var(--accent-2);
-    margin: 0;
-    text-shadow: 0 0 10px var(--accent);
-}
-.header p { margin:4px 0; }
+        ::-webkit-scrollbar-track {
+            background: #05060a;
+        }
 
-/* ---------- SOCIAL ICONS ---------- */
-.social-icons {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-}
-.icon {
-    width: 34px;
-    height: 34px;
-    color: var(--accent-2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .25s ease;
-}
-.icon:hover {
-    color: #a8ddff;
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 8px #009dff);
-}
-.icon svg { width:100%; height:100%; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#0055cc, #00aaff);
+            border-radius: 4px;
+        }
 
-/* ---------- CV BUTTON ---------- */
-.cv-button {
-    margin: 22px auto 0 auto;
-    display: inline-block;
-    padding: 10px 22px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #a8ddff;
-    border: 2px solid #00aaff;
-    border-radius: 12px;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-    box-shadow: 0 0 12px rgba(0,150,255,0.3),
-                inset 0 0 6px rgba(0,100,255,0.2);
-}
-.cv-button:hover {
-    color: #eaffff;
-    background: rgba(0,120,255,0.18);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0,170,255,0.55),
-                inset 0 0 12px rgba(0,100,255,0.35);
-}
+        /* canvas */
+        #particles {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-/* ---------- SECTION HEADERS ---------- */
-h2 {
-  margin-top: 32px;
-  font-family: "Orbitron", sans-serif;
-  font-size: 26px;
-  color: #70baff;
-  border-left: 5px solid var(--accent);
-  padding-left: 12px;
-  text-shadow: 0 0 8px #006eff;
-}
+        /* ===================== CONTAINER ===================== */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 980px;
+            margin: 40px auto 60px;
+            padding: 38px 40px;
+            background: var(--panel);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(18px);
+            box-shadow: var(--glow-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+        }
 
-h3 {
-  margin-top: 12px;
-  font-size: 20px;
-  color: #cfe9ff;
-}
+        /* scanline overlay */
+        .container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 80, 180, 0.025) 2px,
+                    rgba(0, 80, 180, 0.025) 4px);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-/* ---------- CARDS ---------- */
-.project, .exp {
-    margin-bottom: 18px;
-    padding: 16px 18px;
-    background: rgba(30, 40, 60, 0.55);
-    border-left: 4px solid #00aaff;
-    border-radius: 12px;
-    transition:.28s ease;
-    box-shadow: inset 0 0 12px #003e77;
-}
-.project { cursor:pointer; }
-.project:hover, .exp:hover {
-    background: rgba(45, 60, 90, 0.9);
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 0 26px #008cffaa,
-                inset 0 0 20px #005599;
-}
-.project-link { text-decoration:none; color:inherit; display:block; }
+        .container>* {
+            position: relative;
+            z-index: 1;
+        }
 
-/* Footer */
-.footer {
-    text-align:center;
-    margin-top:28px;
-    font-size:13px;
-    color:var(--muted);
-}
+        @keyframes containerIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Responsive */
-@media(max-width:780px){
-  .container { margin:18px; padding:20px; }
-  h1 { font-size:32px; }
-}
-</style>
+        /* ===================== SCROLL REVEAL ===================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===================== HEADER ===================== */
+        .header {
+            text-align: center;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(0, 120, 255, 0.3);
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            background: linear-gradient(90deg, #7fc6ff, #00d4ff, #7fc6ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmerText 3.5s linear infinite;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        @keyframes shimmerText {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .tagline {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--accent2);
+            letter-spacing: 1px;
+            margin: 6px 0 4px;
+        }
+
+        .location {
+            font-size: 13px;
+            color: var(--muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===================== SOCIAL ICONS ===================== */
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .icon {
+            width: 42px;
+            height: 42px;
+            color: var(--accent2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 170, 255, 0.25);
+            background: rgba(0, 80, 180, 0.12);
+            transition: all 0.28s ease;
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+
+        .icon:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .icon:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes iconPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 140, 255, 0);
+            }
+
+            50% {
+                box-shadow: 0 0 10px 3px rgba(0, 140, 255, 0.3);
+            }
+        }
+
+        .icon:hover {
+            color: #fff;
+            background: rgba(0, 119, 255, 0.3);
+            border-color: var(--accent3);
+            transform: scale(1.2) translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.6);
+        }
+
+        .icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ===================== SECTION HEADINGS ===================== */
+        h2 {
+            margin-top: 36px;
+            margin-bottom: 16px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 2px;
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 22px;
+            background: linear-gradient(180deg, var(--accent3), var(--accent));
+            border-radius: 2px;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px var(--accent);
+            animation: barPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes barPulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 8px var(--accent);
+            }
+
+            50% {
+                opacity: 0.6;
+                box-shadow: 0 0 18px var(--accent3);
+            }
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0, 120, 255, 0.4), transparent);
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #cfe9ff;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        /* ===================== OVERVIEW ===================== */
+        .overview-text {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: #b8d4f0;
+            border-left: 2px solid rgba(0, 170, 255, 0.3);
+            padding-left: 16px;
+        }
+
+        /* ===================== SKILL BADGES ===================== */
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .skill-badge {
+            font-size: 12.5px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(0, 80, 180, 0.15);
+            border: 1px solid rgba(0, 140, 255, 0.3);
+            color: #a8d8ff;
+            letter-spacing: 0.3px;
+            transition: all 0.25s ease;
+            cursor: default;
+        }
+
+        .skill-badge:hover {
+            background: rgba(0, 119, 255, 0.25);
+            border-color: var(--accent3);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0, 160, 255, 0.3);
+        }
+
+        /* ===================== EXPERIENCE CARDS ===================== */
+        .exp {
+            margin-bottom: 16px;
+            padding: 18px 20px;
+            background: rgba(10, 20, 40, 0.6);
+            border-left: 3px solid var(--accent);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exp::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .exp:hover {
+            background: rgba(20, 35, 65, 0.85);
+            transform: translateX(5px);
+            border-left-color: var(--accent3);
+            box-shadow: -4px 0 20px rgba(0, 180, 255, 0.2), var(--glow);
+        }
+
+        .exp strong {
+            font-size: 14px;
+            font-weight: 600;
+            color: #cfe9ff;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .exp ul {
+            padding-left: 18px;
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        /* ===================== PROJECT CARDS ===================== */
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .project {
+            padding: 18px 20px;
+            background: rgba(10, 20, 40, 0.6);
+            border: 1px solid rgba(0, 100, 200, 0.2);
+            border-left: 3px solid var(--accent);
+            border-radius: 12px;
+            transition: all 0.32s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.07) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project:hover::before {
+            opacity: 1;
+        }
+
+        .project:hover {
+            background: rgba(15, 30, 60, 0.9);
+            border-color: rgba(0, 180, 255, 0.45);
+            border-left-color: var(--accent3);
+            transform: translateY(-5px) scale(1.005);
+            box-shadow: 0 12px 40px rgba(0, 140, 255, 0.25), var(--glow);
+        }
+
+        .project strong {
+            font-size: 14.5px;
+            color: #ddeeff;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tech-pill {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(0, 170, 255, 0.12);
+            border: 1px solid rgba(0, 170, 255, 0.4);
+            color: var(--accent2);
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover .tech-pill {
+            background: rgba(0, 170, 255, 0.22);
+            border-color: var(--accent3);
+            color: #c5eeff;
+            box-shadow: 0 0 8px rgba(0, 200, 255, 0.3);
+        }
+
+        .project-desc {
+            color: #99c4e8;
+            font-size: 13.5px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .project-bullets {
+            margin: 8px 0 0 0;
+            padding-left: 18px;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        /* ===================== QUALIFICATIONS ===================== */
+        .qual-card {
+            margin-bottom: 16px;
+            padding: 18px 20px;
+            background: rgba(10, 20, 40, 0.6);
+            border-left: 3px solid var(--accent);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .qual-card:hover {
+            background: rgba(20, 35, 65, 0.85);
+            transform: translateX(5px);
+            border-left-color: var(--accent3);
+            box-shadow: -4px 0 20px rgba(0, 180, 255, 0.2);
+        }
+
+        .qual-card ul {
+            padding-left: 18px;
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        /* ===================== FOOTER ===================== */
+        .footer {
+            text-align: center;
+            margin-top: 36px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(0, 100, 200, 0.2);
+            font-size: 12.5px;
+            color: var(--muted);
+            letter-spacing: 0.5px;
+        }
+
+        .footer span {
+            color: var(--accent2);
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 780px) {
+            .container {
+                margin: 16px;
+                padding: 22px 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+                letter-spacing: 3px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
+    <canvas id="particles"></canvas>
 
-<div class="container">
+    <div class="container">
 
-    <!-- HEADER -->
-    <div class="header">
-        <h1>PRATEEK CHAUHAN</h1>
-        <p><strong>Community & QA Specialist • Unity Game Developer</strong></p>
-        <p>Haridwar, Uttarakhand • +91 7906045075</p>
-
-        <!-- SOCIAL ICONS -->
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/prateekchauhan-pcss/" class="icon" target="_blank">
-                <svg viewBox="0 0 24 24"><path fill="currentColor"
-                    d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.98H4.5V24H.5V8.98zM8.48 8.98H12.29V11.02H12.34C12.88 9.98 14.1 8.88 16.08 8.88 20.13 8.88 21 11.52 21 15.3V24H17V16.32C17 14.22 16.96 11.62 14.44 11.62 11.88 11.62 11.5 13.82 11.5 16.18V24H7.5V8.98H8.48Z"/></svg>
-            </a>
-
-            <a href="mailto:prateekchauhan948@gmail.com" class="icon">
-                <svg viewBox="0 0 24 24"><path fill="currentColor"
-                    d="M12 13.065L1.5 6V18H22.5V6L12 13.065ZM12 10.935L22.5 4H1.5L12 10.935Z"/></svg>
-            </a>
-
-            <a href="tel:+919690912846" class="icon">
-                <svg viewBox="0 0 24 24"><path fill="currentColor"
-                    d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.76 14.83 16.27 14.72 16.7 14.88C18.06 15.36 19.53 15.61 21 15.61C21.55 15.61 22 16.06 22 16.61V21C22 21.55 21.55 22 21 22C10.51 22 2 13.49 2 3C2 2.45 2.45 2 3 2H7.39C7.94 2 8.39 2.45 8.39 3C8.39 4.47 8.64 5.94 9.12 7.3C9.27 7.73 9.17 8.24 8.82 8.59L6.62 10.79Z"/></svg>
-            </a>
+        <!-- HEADER -->
+        <div class="header reveal">
+            <h1>PRATEEK CHAUHAN</h1>
+            <p class="tagline">Community &amp; QA Specialist &nbsp;&bull;&nbsp; Unity Game Developer &nbsp;&bull;&nbsp;
+                AI Builder</p>
+            <p class="location">&#128205; Haridwar, Uttarakhand &nbsp;|&nbsp; +91 7906045075</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/prateekchauhan-pcss/" class="icon" target="_blank"
+                    title="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.98H4.5V24H.5V8.98zM8.48 8.98H12.29V11.02H12.34C12.88 9.98 14.1 8.88 16.08 8.88 20.13 8.88 21 11.52 21 15.3V24H17V16.32C17 14.22 16.96 11.62 14.44 11.62 11.88 11.62 11.5 13.82 11.5 16.18V24H7.5V8.98H8.48Z" />
+                    </svg>
+                </a>
+                <a href="mailto:prateekchauhan948@gmail.com" class="icon" title="Email">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12 13.065L1.5 6V18H22.5V6L12 13.065ZM12 10.935L22.5 4H1.5L12 10.935Z" />
+                    </svg>
+                </a>
+                <a href="tel:+917906045075" class="icon" title="Phone">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.76 14.83 16.27 14.72 16.7 14.88C18.06 15.36 19.53 15.61 21 15.61C21.55 15.61 22 16.06 22 16.61V21C22 21.55 21.55 22 21 22C10.51 22 2 13.49 2 3C2 2.45 2.45 2 3 2H7.39C7.94 2 8.39 2.45 8.39 3C8.39 4.47 8.64 5.94 9.12 7.3C9.27 7.73 9.17 8.24 8.82 8.59L6.62 10.79Z" />
+                    </svg>
+                </a>
+            </div>
         </div>
 
-        
+        <!-- OVERVIEW -->
+        <h2 class="reveal">Overview</h2>
+        <p class="overview-text reveal">
+            Detail-oriented Community &amp; QA Specialist and Unity Game Developer with 2+ years of experience
+            supporting
+            game studios in launching polished, high-engagement products. Skilled in Unity (C#), QA workflows, Blender
+            3D, AI automation pipelines, and Solidity smart contracts — bridging creative and technical disciplines.
+        </p>
+
+        <!-- SKILLS -->
+        <h2 class="reveal">Skills</h2>
+        <div class="skill-grid reveal">
+            <span class="skill-badge">Discord Community Management</span>
+            <span class="skill-badge">QA Testing &amp; Bug Triage</span>
+            <span class="skill-badge">Unity Game Development</span>
+            <span class="skill-badge">C# &nbsp;&middot;&nbsp; C++ &nbsp;&middot;&nbsp; Python</span>
+            <span class="skill-badge">Blender 3D &amp; VFX</span>
+            <span class="skill-badge">Solidity &amp; Web3</span>
+            <span class="skill-badge">AI Automation</span>
+            <span class="skill-badge">Figma &amp; UI/UX</span>
+            <span class="skill-badge">Agile / Scrum</span>
+            <span class="skill-badge">Java</span>
+            <span class="skill-badge">Functional &amp; Regression Testing</span>
+            <span class="skill-badge">Photoshop</span>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <h2 class="reveal">Professional Experience</h2>
+
+        <div class="exp reveal">
+            <strong>GLIP.gg &mdash; Community Manager &amp; QA Engineer &nbsp;<span
+                    style="font-size:11px;color:#5599cc;font-weight:400;">(Nov 2022 &ndash; July 2025)</span></strong>
+            <ul>
+                <li>Scaled Discord community from 2,000 &rarr; 31,000+ members through targeted engagement strategies
+                </li>
+                <li>Boosted Daily Active Users by 200&ndash;300% through optimised events and retention campaigns</li>
+                <li>Designed and executed full QA test cycles, reducing post-launch critical bugs by 40%</li>
+            </ul>
+        </div>
+
+        <div class="exp reveal">
+            <strong>Heyo Entertainment &mdash; Unity Game Dev Intern &nbsp;<span
+                    style="font-size:11px;color:#5599cc;font-weight:400;">(Jan 2025 &ndash; July 2025)</span></strong>
+            <ul>
+                <li>Built high-performance gameplay systems with optimised C# architecture</li>
+                <li>Optimized Blender assets and LOD pipeline, reducing final build size by ~100 MB</li>
+                <li>Automated lighting bake, VFX, and export workflows saving ~6 hrs/week of artist time</li>
+            </ul>
+        </div>
+
+        <!-- PROJECTS -->
+        <h2 class="reveal">Projects</h2>
+
+        <a class="project-link reveal" href="https://github.com/Kingsterzgaming/youtubDataEngine" target="_blank">
+            <div class="project">
+                <strong>YouTube Data Engine <span class="tech-pill">AI</span><span class="tech-pill">Python</span><span
+                        class="tech-pill">YouTube API</span></strong>
+                <p class="project-desc">Intelligent YouTube analytics platform that crawls channel data via the YouTube
+                    Data API v3, performs AI-driven insight extraction using Gemini, and auto-generates structured
+                    reports covering growth trends, top-performing content, engagement metrics, and content strategy
+                    recommendations.</p>
+                <ul class="project-bullets">
+                    <li>Fetches channel stats, video metadata &amp; comment sentiment via YouTube Data API v3</li>
+                    <li>AI layer (Gemini) generates narrative insight reports with actionable recommendations</li>
+                    <li>Tracks subscriber velocity, view-per-video ratios &amp; engagement rate over time</li>
+                    <li>Exports reports as JSON / Markdown / styled HTML for easy sharing</li>
+                </ul>
+            </div>
+        </a>
+
+        <a class="project-link reveal" href="https://github.com/Kingsterzgaming/hackerrank-orchestrate-june26"
+            target="_blank">
+            <div class="project">
+                <strong>Claim Automation System <span class="tech-pill">AI</span><span
+                        class="tech-pill">Python</span><span class="tech-pill">Computer Vision</span></strong>
+                <p class="project-desc">End-to-end AI-powered claims processing pipeline that ingests damage images and
+                    conversation transcripts, uses computer vision and NLP to extract key evidence, classify claim
+                    severity, and automate approval decisions &mdash; drastically reducing manual review time and human
+                    error.</p>
+                <ul class="project-bullets">
+                    <li>Parses uploaded images via vision model to detect damage type, area &amp; severity score</li>
+                    <li>Processes conversation/chat logs using NLP to extract claim intent &amp; supporting evidence
+                    </li>
+                    <li>Automated decision engine routes claims: auto-approve, escalate, or reject with reason</li>
+                    <li>Generates structured claim summary reports with confidence scores for auditors</li>
+                </ul>
+            </div>
+        </a>
+
+        <a class="project-link reveal" href="https://github.com/Kingsterzgaming/yakuza-country" target="_blank">
+            <div class="project">
+                <strong>Wealth Management Game <span class="tech-pill">Unity</span><span
+                        class="tech-pill">C#</span><span class="tech-pill">2D</span></strong>
+                <p class="project-desc">Futuristic 2D management strategy game where players build and grow economic
+                    empires across dystopian city districts. Features real-time resource allocation, procedural market
+                    events, and dynamic faction diplomacy &mdash; all built in Unity with a custom game-loop
+                    architecture optimized for mobile and PC.</p>
+                <ul class="project-bullets">
+                    <!-- <li>Designed modular C# systems for resource management, taxation &amp; trade routes</li>
+                <li>Procedural market event engine creates dynamic price fluctuations and economic crises</li>
+                <li>Implemented faction AI with negotiation states, alliances, and betrayal mechanics</li>
+                <li>Optimized rendering pipeline achieving stable 60 FPS on mid-range mobile hardware</li> -->
+                </ul>
+            </div>
+        </a>
+
+        <a class="project-link reveal" href="https://github.com/Kingsterzgaming/smart-contract" target="_blank">
+            <div class="project">
+                <strong>Solidity Utility Contracts <span class="tech-pill">Solidity</span><span
+                        class="tech-pill">Web3</span><span class="tech-pill">Ethereum</span></strong>
+                <p class="project-desc">A library of reusable, gas-optimised Solidity smart contract modules
+                    purpose-built for blockchain games &mdash; covering on-chain asset ownership, reward distribution,
+                    player progression, and secure randomness &mdash; deployable on any EVM-compatible chain.</p>
+                <ul class="project-bullets">
+                    <!-- <li>ERC-721 / ERC-1155 NFT contracts for in-game item minting &amp; tradeable ownership</li>
+                <li>On-chain reward vaults with claimable token distribution and anti-rug safeguards</li>
+                <li>Verifiable random function (VRF) integration for provably fair loot &amp; matchmaking</li>
+                <li>Gas benchmark suite reducing average transaction cost by 35% vs naive implementations</li> -->
+                </ul>
+            </div>
+        </a>
+
+        <a class="project-link reveal" href="https://github.com/Kingsterzgaming/crypt0-wallet" target="_blank">
+            <div class="project">
+                <strong>132-bit Entropy Generator <span class="tech-pill">C++</span><span
+                        class="tech-pill">Cryptography</span><span class="tech-pill">Security</span></strong>
+                <p class="project-desc">High-assurance 132-bit entropy generation engine in pure C++ with zero
+                    third-party dependencies &mdash; producing cryptographically strong random seeds for wallet key
+                    derivation, paired with a BIP-39 compatible checksum validator to guarantee mnemonic phrase
+                    integrity.</p>
+                <ul class="project-bullets">
+                    <!-- <li>Multi-source entropy pool combining OS noise, hardware timing jitter &amp; user input</li> -->
+                    <li>SHA-256 checksum layer validates seed integrity before wallet key derivation</li>
+                    <li>BIP-39 word-list mapping converts raw entropy to human-readable mnemonic phrases</li>
+                    <li>Zero external dependencies &mdash; fully auditable, portable, embeddable in any C++ project</li>
+                </ul>
+            </div>
+        </a>
+
+        <!-- QUALIFICATIONS -->
+        <h2 class="reveal">Qualifications</h2>
+
+        <div class="qual-card reveal">
+            <h3>Education</h3>
+            <ul>
+                <li>B.Tech &ndash; Computer Science &amp; Engineering &ndash; Uttarakhand Technical University (2022)
+                </li>
+                <li>Class XII &ndash; Shri Guru Ram Rai Public School (2018)</li>
+                <li>Class X &ndash; Shri Guru Ram Rai Public School (2016)</li>
+            </ul>
+        </div>
+
+        <div class="qual-card reveal">
+            <h3>Certifications</h3>
+            <ul>
+                <li>3D Game Development Internship &mdash; Heyo Entertainment, 2025</li>
+                <li>AI Automation Masterclass &mdash; Outskill, 2025</li>
+                <li>Android App Development &mdash; Code with Harry, 2023</li>
+                <li>UI/UX Design Certification &mdash; 2022</li>
+                <li>Industrial Java Training &mdash; Insergo Technologies, 2019</li>
+            </ul>
+        </div>
+
+        <div class="footer reveal">
+            &copy; 2025 <span>Prateek Chauhan</span> &mdash; Built with passion &amp; pixels
+        </div>
+
     </div>
 
-    <!-- OVERVIEW -->
-    <h2>Overview</h2>
-    <p>
-        Detail-oriented Community & QA Specialist and Unity Game Developer with 2+ years of experience supporting
-        game studios in launching polished, high-engagement products. Strong in Unity (C#), QA workflows, Blender,
-        automation, and Solidity.
-    </p>
+    <!-- PARTICLES -->
+    <script>
+        (function () {
+            const canvas = document.getElementById("particles");
+            const ctx = canvas.getContext("2d");
+            let W, H;
+            function resize() { W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+            resize();
+            addEventListener("resize", resize);
 
-    <!-- SKILLS -->
-    <h2>Skills</h2>
-    <ul>
-        <li>Community Management: Discord, Telegram, WhatsApp, events, retention</li>
-        <li>QA Testing: Functional, Regression, UAT, bug triage</li>
-        <li>Unity Game Development: gameplay systems, optimization, profiling</li>
-        <li>Art Tools: Blender modeling, lighting, texturing, VFX</li>
-        <li>Programming: C#, C++, Python, Java, Solidity</li>
-        <li>Design & Workflow: Figma, Photoshop, Agile/Scrum</li>
-    </ul>
+            const rnd = (a, b) => Math.random() * (b - a) + a;
+            let P = [];
 
-   
-    <!-- EXPERIENCE -->
-    <h2>Professional Experience</h2>
+            function initParticles() {
+                P = [];
+                const count = Math.max(70, Math.floor((W * H) / 75000));
+                for (let i = 0; i < count; i++) {
+                    P.push({ x: rnd(0, W), y: rnd(0, H), r: rnd(1, 2.2), vx: rnd(-0.3, 0.3), vy: rnd(-0.22, 0.22), hue: rnd(195, 220), a: rnd(0.5, 0.95) });
+                }
+            }
+            initParticles();
+            addEventListener("resize", initParticles);
 
-    <div class="exp">
-        <strong>GLIP.gg — Community Manager & QA Engineer (Nov 2022 – July 2025)</strong>
-        <ul>
-            <li>Scaled Discord community from 2,000 → 31,000+ members</li>
-            <li>Boosted DAU by 200–300% through optimized events</li>
-            <li>Created QA test cycles and reduced post-launch issues</li>
-        </ul>
-    </div>
+            let mouse = { x: -9999, y: -9999, active: false };
+            addEventListener("mousemove", e => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true; });
+            addEventListener("mouseleave", () => { mouse.active = false; mouse.x = -9999; });
 
-    <div class="exp">
-        <strong>Heyo Entertainment — Unity Game Dev Intern (Jan 2025 – July 2025)</strong>
-        <ul>
-            <li>Built high-performance gameplay systems</li>
-            <li>Optimized Blender assets, reducing build size by ~100MB</li>
-            <li>Automated lighting, VFX, and workflow tools</li>
-        </ul>
-    </div>
+            function loop() {
+                ctx.clearRect(0, 0, W, H);
+                for (let i = 0; i < P.length; i++) {
+                    for (let j = i + 1; j < P.length; j++) {
+                        const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d = Math.hypot(dx, dy);
+                        if (d < 130) {
+                            ctx.strokeStyle = `rgba(100,180,255,${0.12 - d * 0.0009})`;
+                            ctx.lineWidth = 0.7;
+                            ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
+                        }
+                    }
+                }
+                for (const p of P) {
+                    if (mouse.active) {
+                        const dx = mouse.x - p.x, dy = mouse.y - p.y, d = Math.hypot(dx, dy);
+                        if (d < 150) { p.vx += (-dx / d) * 0.04; p.vy += (-dy / d) * 0.04; }
+                    }
+                    const spd = Math.hypot(p.vx, p.vy);
+                    if (spd > 1.2) { p.vx *= 0.95; p.vy *= 0.95; }
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < -10) p.x = W + 10; if (p.x > W + 10) p.x = -10;
+                    if (p.y < -10) p.y = H + 10; if (p.y > H + 10) p.y = -10;
+                    ctx.beginPath();
+                    ctx.fillStyle = `hsla(${p.hue},100%,72%,${p.a})`;
+                    ctx.shadowBlur = 10; ctx.shadowColor = `hsla(${p.hue},100%,70%,0.35)`;
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill(); ctx.shadowBlur = 0;
+                }
+                requestAnimationFrame(loop);
+            }
+            loop();
+        })();
+    </script>
 
-    <!-- PROJECTS -->
-    <h2>Projects</h2>
-
-    <a class="project-link" href="https://github.com/Kingsterzgaming/yakuza-country" target="_blank">
-        <div class="project"><strong>Wealth Management Game (Unity)</strong><br>
-        Futuristic 2D management strategy prototype.</div>
-    </a>
-
-    <!-- <a class="project-link" href="" target="_blank">
-        <div class="project"><strong>Voice-Controlled NPC Dialog (AI + Python)</strong><br>
-        Real-time NLP-driven speech interaction.</div>
-    </a> -->
-
-    <a class="project-link" href="https://github.com/Kingsterzgaming/smart-contract" target="_blank">
-        <div class="project"><strong>Solidity Utility Contracts</strong><br>
-        Smart-contract modules for blockchain games.</div>
-    </a>
-
-    <a class="project-link" href="https://github.com/Kingsterzgaming/crypt0-wallet" target="_blank">
-        <div class="project"><strong>132-bit Entropy Generator (C++)</strong><br>
-        Pure entropy generator with checksum validation.</div>
-    </a>
-
-    <!-- <a class="project-link" href="" target="_blank">
-        <div class="project"><strong>Animation Retargeting (Unity)</strong><br>
-        Automated humanoid retargeting pipeline.</div>
-    </a> -->
-
- <!-- QUALIFICATIONS -->
-    <h2>Qualifications</h2>
-    <div class="exp">    
-    <h3>Education</h3>
-    <ul>
-        <li>B.Tech – Computer Science & Engineering – Uttarakhand Technical University (2022)</li>
-        <li>Class XII – Shri Guru Ram Rai Public School (2018)</li>
-        <li>Class X – Shri Guru Ram Rai Public School (2016)</li>
-    </ul>
-   </div>
-   <div class="exp">  
-    <h3>Certifications</h3>
-
-    <ul>
-        <li>3D Game Development Internship — Heyo Entertainment, 2025</li>
-        <li>AI Automation Masterclass — Outskill, 2025</li>
-        <li>Android App Development — Code with harry ,2023</li>
-        <li>UI/UX Design Certification — 2022</li>
-        <li>Industrial Java Training — Insergo Technologies, 2019</li>
-    </ul>
-    </div>
-    <div class="footer">© 2025 Prateek Chauhan — Game Dev Portfolio</div>
-    <!-- DOWNLOAD CV
-        <a class="cv-button" href="Prateek-Chauhan-CV.pdf" download>
-            Download CV
-        </a> -->
-
-</div>
-
-<!-- PARTICLES SCRIPT -->
-<script>
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-let W=canvas.width=innerWidth;
-let H=canvas.height=innerHeight;
-
-addEventListener("resize",()=>{W=canvas.width=innerWidth;H=canvas.height=innerHeight;});
-
-const N=Math.max(60,Math.floor((W*H)/85000));
-const P=[];
-const r=(a,b)=>Math.random()*(b-a)+a;
-
-for(let i=0;i<N;i++)
-  P.push({x:r(0,W),y:r(0,H),r:r(1,2.4),vx:r(-0.35,0.35),vy:r(-0.25,0.25),
-          hue:r(195,215),a:r(0.55,1)});
-
-let mouse={x:-9999,y:-9999,active:false};
-addEventListener("mousemove",e=>{mouse.x=e.clientX;mouse.y=e.clientY;mouse.active=true;});
-addEventListener("mouseleave",()=>{mouse.active=false;mouse.x=-9999;});
-
-function loop(){
-  ctx.clearRect(0,0,W,H);
-
-  for(let i=0;i<N;i++){
-    for(let j=i+1;j<N;j++){
-      const dx=P[i].x-P[j].x, dy=P[i].y-P[j].y;
-      const d=Math.hypot(dx,dy);
-      if(d<120){
-        ctx.strokeStyle=`rgba(120,180,255,${0.10 - d*0.0008})`;
-        ctx.beginPath(); ctx.moveTo(P[i].x,P[i].y); ctx.lineTo(P[j].x,P[j].y); ctx.stroke();
-      }
-    }
-  }
-
-  for(const p of P){
-    if(mouse.active){
-      const dx=mouse.x-p.x, dy=mouse.y-p.y, d=Math.hypot(dx,dy);
-      if(d<140){
-        p.vx += (-dx/d)*0.03;
-        p.vy += (-dy/d)*0.03;
-      }
-    }
-    p.x+=p.vx; p.y+=p.vy;
-    if(p.x<-10)p.x=W+10; if(p.x>W+10)p.x=-10;
-    if(p.y<-10)p.y=H+10; if(p.y>H+10)p.y=-10;
-
-    ctx.beginPath();
-    ctx.fillStyle=`hsla(${p.hue},100%,70%,${p.a})`;
-    ctx.shadowBlur=14; ctx.shadowColor="rgba(0,119,255,0.3)";
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fill(); ctx.shadowBlur=0;
-  }
-  requestAnimationFrame(loop);
-}
-loop();
-</script>
+    <!-- SCROLL REVEAL -->
+    <script>
+        (function () {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add("visible"), i * 60);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08 });
+            document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+        })();
+    </script>
 
 </body>
+
 </html>
